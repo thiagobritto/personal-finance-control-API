@@ -37,8 +37,7 @@ public class Transaction {
 
 	}
 
-	public Transaction(Long id, String description, BigDecimal amount, TransactionType type, LocalDate date) {
-		this.id = id;
+	public Transaction(String description, BigDecimal amount, TransactionType type, LocalDate date) {
 		this.description = description;
 		this.amount = amount;
 		this.type = type;
