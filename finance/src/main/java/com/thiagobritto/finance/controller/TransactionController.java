@@ -15,6 +15,8 @@ import com.thiagobritto.finance.dto.CreateTransactionRequest;
 import com.thiagobritto.finance.dto.TransactionResponse;
 import com.thiagobritto.finance.service.TransactionService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/transactions")
 public class TransactionController {
@@ -27,7 +29,7 @@ public class TransactionController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public TransactionResponse create(@RequestBody CreateTransactionRequest request) {
+	public TransactionResponse create(@RequestBody @Valid CreateTransactionRequest request) {
 		Transaction transaction = new Transaction(
 				request.getDescription(), 
 				request.getAmount(), 

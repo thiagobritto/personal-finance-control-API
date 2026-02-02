@@ -5,11 +5,23 @@ import java.time.LocalDate;
 
 import com.thiagobritto.finance.domain.TransactionType;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
 public class CreateTransactionRequest {
 
+	@NotBlank
 	private String description;
+	
+	@NotNull
+	@Positive
 	private BigDecimal amount;
+	
+	@NotNull
 	private TransactionType type;
+	
+	@NotNull
 	private LocalDate date;
 
 	public String getDescription() {
